@@ -3,7 +3,8 @@ INSERT INTO Country(id, code, name) VALUES
 -- Les clés sont auto-générées, donc on ne les spécifie pas
     (default, 'FR', 'France'), -- id = 1
     (default, 'UK', 'United Kingdom'), -- id = 2
-    (default, 'US', 'United States of America'); -- id = 3
+    (default, 'US', 'United States of America'), -- id = 3
+    (default, 'AU', 'Autralia'); -- id = 4
 -- On peut fixer la valeur des clés auto-générées, mais il faudrait ensuite
 -- réinitialiser le compteur de clé auto-générée
 -- Attention : la syntaxe est différente selon le SGBD utilisé
@@ -13,4 +14,5 @@ INSERT INTO Country(id, code, name) VALUES
 INSERT INTO CITY(name, population, country_id) VALUES
     ('Paris', 12, SELECT id FROM Country WHERE code = 'FR'),
     ('London', 18, SELECT id FROM Country WHERE code = 'UK'),
-    ('New York', 27, SELECT id FROM Country WHERE code = 'US');
+    ('New York', 27, SELECT id FROM Country WHERE code = 'US'),
+    ('Sidney', 50, SELECT id FROM Country WHERE code = 'AU');
