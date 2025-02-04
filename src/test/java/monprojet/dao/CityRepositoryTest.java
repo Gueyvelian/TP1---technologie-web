@@ -33,6 +33,6 @@ public class CityRepositoryTest {
         log.info("On vérifie que les villes d'un pays sont accessibles");
         City paris = cityDAO.findByName("Paris");
         Country france = countryDAO.findById(1).orElseThrow();
-        assertTrue( france.getCities().contains(paris), "France contient Paris");
+        assertTrue( france.getCities().contains(paris), "France ne contient pas Paris");
     }
 }
